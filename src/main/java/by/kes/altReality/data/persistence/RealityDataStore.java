@@ -2,7 +2,7 @@ package by.kes.altReality.data.persistence;
 
 import static java.util.stream.Collectors.toList;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.Map;
@@ -10,11 +10,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import by.kes.altReality.data.domain.RealityCharacteristics;
 
-@Component
+@Repository
 public class RealityDataStore {
 
   private final Map<String, RealityCharacteristics> data = new ConcurrentHashMap<>();
-  private final Map<String, String> tokens = new ConcurrentHashMap<>();
 
   public RealityCharacteristics get(final String id) {
     return data.get(id);
@@ -36,7 +35,6 @@ public class RealityDataStore {
 
   public void update(final RealityCharacteristics realityCharacteristics) {
     synchronized (data) {
-      data.remove(realityCharacteristics.getId());
       data.put(realityCharacteristics.getId(), realityCharacteristics);
     }
   }

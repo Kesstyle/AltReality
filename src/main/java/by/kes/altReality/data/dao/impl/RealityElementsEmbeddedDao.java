@@ -1,4 +1,4 @@
-package by.kes.altReality.data.dao;
+package by.kes.altReality.data.dao.impl;
 
 import static java.util.stream.Collectors.toList;
 
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicLong;
 
+import by.kes.altReality.data.dao.RealityElementsDao;
 import by.kes.altReality.data.domain.DateBreakdown;
 import by.kes.altReality.data.domain.NullReality;
 import by.kes.altReality.data.domain.RealityCharacteristics;
