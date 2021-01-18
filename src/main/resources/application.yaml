@@ -1,0 +1,9 @@
+server:
+  port: 8111
+
+
+
+jwt:
+  issuer: kesstyle
+  signing-key: kesstylealtreality
+  valid-for: 3600000
