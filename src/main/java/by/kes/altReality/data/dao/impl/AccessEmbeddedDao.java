@@ -1,11 +1,13 @@
 package by.kes.altReality.data.dao.impl;
 
+import static by.kes.altReality.data.security.AccessToken.NULL_ACCESS_TOKEN;
 import static java.util.Arrays.asList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 import by.kes.altReality.data.persistence.AccessTokenDataStore;
 import by.kes.altReality.data.security.AccessToken;
@@ -33,11 +35,16 @@ public class AccessEmbeddedDao {
     return accessTokenDataStore.getRealityToken(id).orElse(null);
   }
 
-  public AccessToken matchesToken(final String id, final String token) {
-    return accessTokenDataStore.findRealityTokens(id, token);
+  public Map<String, List<AccessToken>> getRealityTokens() {
+    return accessTokenDataStore.getAllRealityTokens();
+  }
+
+  public AccessToken matchesRealityToken(final String id, final String token) {
+    return accessTokenDataStore.findRealityTokens(id, token).orElse(NULL_ACCESS_TOKEN);
   }
 
   public AccessToken matchesUserToken(final String token) {
-    return accessTokenDataStore.getUserToken(token).orElse(null);
+    return accessTokenDataStore.getUserToken(token).orElse(NULL_ACCESS_TOKEN);
   }
+
 }

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.time.LocalDateTime;
 
+import by.kes.altReality.controller.model.spec.location.FeaturedLocation;
 import by.kes.altReality.controller.utils.LocalDateTimeDeserializer;
 import by.kes.altReality.controller.utils.LocalDateTimeSerializer;
 import lombok.AllArgsConstructor;
@@ -26,5 +27,5 @@ public class RealityQuantum {
   @JsonDeserialize(using = LocalDateTimeDeserializer.class)
   private LocalDateTime moment;
 
-  private Location location;
+  private FeaturedLocation location;
 }

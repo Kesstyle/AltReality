@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="76b2e87b-ad01-44c3-9f62-30f224bd3bc9" activeEnvironment="Default" name="REST Project 2" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="9c62f5df-a662-4ff0-9ede-37edbb31e8ee" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8111" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8111</con:endpoint></con:endpoints><con:resource name="" path="/api/realities" id="60f9d3f1-634c-4b6d-9772-bfd9876bc9d5"><con:settings/><con:parameters/><con:method name="Add Reality" id="3a488bab-e917-47b7-b593-890eb3135ec0" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:real="http://localhost/api/realities">real:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>403</con:status><con:params/><con:element xmlns:real="http://localhost/api/realities">real:Fault</con:element></con:representation><con:request name="Request 1" id="f9ad7f49-2b6d-4e77-b9d3-e30bba97eeb5" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-User-Token" value="user" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8111</con:endpoint><con:request>{
+   "reality": {
+		 "id": "2122",
+         "realityName": "node 11",
+         "dateBreakdowns":[
+          {
+			   "id": "2122::fsdss",
+               "realityQuantum":{
+                  "moment":"2020-01-15 10:45:29",
+                  "location":{
+                     "lon":156.11,
+                     "lat":141.15,
+                     "height":121,
+                     "name":"Random 2020"
+                  }
+               },
+               "currentSetup":{
+                  "events":[
+                     "Covid borned"
+                ]
+             }
+          }
+       ]
+    }
+   
+}</con:request><con:originalUri>http://localhost/api/realities</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method><con:method name="Get realities" id="d561f4ba-833d-47b3-86ed-b42d2d56493c" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="1ac309c5-b275-4d23-a5f6-4ff2dc0faaad" mediaType="application/json" postQueryString="false"><con:settings/><con:endpoint>http://localhost:8111</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="" path="/api/realities/2122" id="60f9d3f1-634c-4b6d-9772-bfd9876bc9d5"><con:settings/><con:parameters><con:parameter><con:name>id</con:name><con:value>2122</con:value><con:style>QUERY</con:style><con:default>2122</con:default><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Get" id="21a97379-fce7-4e21-b2b3-5bc0d49a8c31" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400 403 405 404</con:status><con:params/><con:element xmlns:char="http://localhost/api/realities/0/characteristics">char:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:char="http://localhost/api/realities/0/characteristics">char:Response</con:element></con:representation><con:request name="Request 1" id="1fb81ad5-31df-4d07-80d4-7e6212e0c1d0" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-Reality-Access-Token" value="eyJhbGciOiJIUzI1NiJ9.eyJyZWFsaXR5SWQiOiIyMTIyIiwibmFtZSI6Im5vZGUgMTEiLCJpc3MiOiJrZXNzdHlsZSIsImlhdCI6MTYxMDk2NjEwNSwiZXhwIjoxNjEwOTY5NzA1fQ.ENaObeADKoqTFH_cSzuwK6Qp7K3P4vMISuttHOel7Ug" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8111</con:endpoint><con:request/><con:originalUri>http://localhost/api/realities/0/characteristics</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry>id</con:entry></con:parameterOrder></con:request></con:method><con:method name="Add" id="1a76e183-7433-4371-8262-cf84d92704b7" method="POST"><con:settings/><con:parameters/><con:request name="Request 1" id="31bcaed6-958e-4b02-b9c2-ccde15e768c5" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-Reality-Access-Token" value="" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8111</con:endpoint><con:request>{
+         "dateBreakdowns":[
+            {
+               "realityQuantum":{
+                  "moment":"2021-01-15 10:45:29",
+                  "location":{
+                     "lon":123.11,
+                     "lat":133.15,
+                     "height":11,
+                     "name":"Minsk"
+                  }
+               },
+               "currentSetup":{
+                  "events":[
+                     "Win in min building"
+                  ]
+               }
+            }
+         ]
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -31,16 +32,19 @@ public class AccessTokenDataStore {
     realityTokens.put(id, accessTokenList);
   }
 
-  public AccessToken findRealityTokens(final String id, final String token) {
+  public Optional<AccessToken> findRealityTokens(final String id, final String token) {
     return getRealityToken(id).orElse(new ArrayList<>()).stream()
         .filter(accessToken -> accessToken.getToken().equalsIgnoreCase(token))
-        .findFirst()
-        .orElse(null);
+        .findFirst();
   }
 
   public void addUserToken(final AccessToken accessToken) {
     if (accessToken != null && accessToken.getToken() != null) {
       userTokens.put(accessToken.getToken(), accessToken);
     }
+  }
+
+  public Map<String, List<AccessToken>> getAllRealityTokens() {
+    return Collections.unmodifiableMap(realityTokens);
   }
 }
